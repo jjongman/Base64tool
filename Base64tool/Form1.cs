@@ -12,9 +12,37 @@ namespace Base64tool
 {
     public partial class Form1 : Form
     {
+        Processor proc = new Processor();
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                proc.Filepath = ofd.FileName;
+                Base64Box.Text = proc.Base64;
+            }
+        }
+
+        private void SaveFile_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.ShowDialog();
+
+            if (sfd.FileName != "")
+            {
+                sfd.OpenFile().Write(proc.Filebytes,0,proc.Filebytes.Length);
+            }
         }
     }
 }
