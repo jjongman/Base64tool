@@ -31,6 +31,7 @@
             this.OpenFile = new System.Windows.Forms.Button();
             this.SaveFile = new System.Windows.Forms.Button();
             this.Base64Box = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // OpenFile
@@ -60,12 +61,22 @@
             this.Base64Box.Size = new System.Drawing.Size(331, 112);
             this.Base64Box.TabIndex = 3;
             this.Base64Box.Text = "";
+            this.Base64Box.TextChanged += new System.EventHandler(this.Base64Box_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 169);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 179);
+            this.ClientSize = new System.Drawing.Size(358, 191);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Base64Box);
             this.Controls.Add(this.SaveFile);
             this.Controls.Add(this.OpenFile);
@@ -73,6 +84,7 @@
             this.Text = "Base64 Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -81,6 +93,7 @@
         private System.Windows.Forms.Button OpenFile;
         private System.Windows.Forms.Button SaveFile;
         private System.Windows.Forms.RichTextBox Base64Box;
+        private System.Windows.Forms.Label label1;
     }
 }
 

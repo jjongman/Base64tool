@@ -31,6 +31,7 @@ namespace Base64tool
             {
                 proc.Filepath = ofd.FileName;
                 Base64Box.Text = proc.Base64;
+                //label1.Text = Base64Box.Text.Length.ToString();
             }
         }
 
@@ -43,6 +44,12 @@ namespace Base64tool
             {
                 sfd.OpenFile().Write(proc.Filebytes,0,proc.Filebytes.Length);
             }
+        }
+
+        private void Base64Box_TextChanged(object sender, EventArgs e)
+        {
+            proc.Base64 = Base64Box.Text;
+            label1.Text = Base64Box.Text.Length.ToString();
         }
     }
 }
